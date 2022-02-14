@@ -1,0 +1,22 @@
+private void btnSom_Click(object sender, EventArgs e){
+    //öppna ström
+        FileStream utStröm = new FileStream(dlgSparaFil.FileName, FileMode.OpenorCreate, FileAccess.Write);
+    if(resultt == DialogResult.OK){
+        //skapa skrivare
+        StreamWriter skrivare = new StreamWriter (utStröm);
+        //skriv en rad text i taget.
+        Skrivare.WriteLine(k.Förnamn);
+        skrivare.WriteLine(k.Efternman);
+        skrivare.WriteLine(k.Epsot);
+        skrivare.WriteLine(k.Telefonnr);
+        //skriv en konakt i taget 
+        foreach (Kontakt k in lbxKontaktetr.Items){
+            //visa dialgruta där man kan ange ett filnamn
+            DialogResult resultat = dlgSparaFil.ShowDialog();
+            //stäng Filen
+            skrivare.Dispose();
+        }
+        
+    }
+
+}
